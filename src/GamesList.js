@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import GameCard from './GameCard';
 
 export default function GamesList({ games, deleteGame }) {
@@ -20,6 +21,6 @@ export default function GamesList({ games, deleteGame }) {
 }
 
 GamesList.propTypes = {
-  games: React.PropTypes.array.isRequired,
-  deleteGame: React.PropTypes.func.isRequired
+  games: PropTypes.array.isRequired,
+  deleteGame: PropTypes.func.isRequired
 }

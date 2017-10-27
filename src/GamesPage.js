@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import GamesList from './GamesList';
 import { connect } from 'react-redux';
 import { fetchGames, deleteGame } from './actions';
@@ -20,9 +21,9 @@ class GamesPage extends React.Component {
 }
 
 GamesPage.propTypes = {
-  games: React.PropTypes.array.isRequired,
-  fetchGames: React.PropTypes.func.isRequired,
-  deleteGame: React.PropTypes.func.isRequired
+  games: PropTypes.array.isRequired,
+  fetchGames: PropTypes.func.isRequired,
+  deleteGame: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {

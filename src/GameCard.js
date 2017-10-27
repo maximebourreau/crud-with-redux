@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export default function GameCard({ game, deleteGame }) {
@@ -21,6 +22,6 @@ export default function GameCard({ game, deleteGame }) {
 }
 
 GameCard.propTypes = {
-  game: React.PropTypes.object.isRequired,
-  deleteGame: React.PropTypes.func.isRequired
+  game: PropTypes.object.isRequired,
+  deleteGame: PropTypes.func.isRequired
 }
