@@ -7,6 +7,7 @@ import rootReducer from './rootReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import 'semantic-ui-css/semantic.css';
 import './index.css';
 
 const store = createStore(
