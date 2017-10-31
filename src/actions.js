@@ -97,8 +97,8 @@ export function fetchGames() {
 
 export function fetchGame(id) {
   return dispatch => {
-    fetch(`/api/games/${id}`)
-      .then(res => res.json())
+    return fetch(`/api/games/${id}`)
+      .then(handleResponse)
       .then(data => dispatch(gameFetched(data.game)));
   }
 }

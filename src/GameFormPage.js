@@ -7,12 +7,14 @@ import GameForm from './GameForm';
 class GameFormPage extends React.Component {
 
   state = {
-    redirect: false
+    redirect: false,
+    err: null
   }
 
   componentDidMount = () => {
     if (this.props.match.params._id) {
-      this.props.fetchGame(this.props.match.params._id);
+      this.props.fetchGame(this.props.match.params._id)
+        .catch(err => this.setState({ err }));
     }
   }
 
@@ -32,6 +34,8 @@ class GameFormPage extends React.Component {
     return (
       <div>
         {
+          this.state.err ?
+          <h1>{this.state.err.message}</h1> :
           this.state.redirect ?
           <Redirect to="/games" /> :
           <GameForm

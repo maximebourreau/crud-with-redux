@@ -50,7 +50,11 @@ module.exports = function(app) {
   });
   app.get('/api/games/:_id', (req, res) => {
     const game = games.find(game => game._id == req.params._id);
-    res.json({ game: game });
+    if (game) {
+      res.json({ game: game });
+    } else {
+      res.status(404).json();
+    }
   });
   app.delete('/api/games/:_id', (req, res) => {
     const i = games.findIndex(game => game._id == req.params._id);
