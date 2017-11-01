@@ -53,6 +53,7 @@ class GameForm extends React.Component {
     const form = (
       <form className={classnames('ui', 'form', { loading: this.state.loading })} onSubmit={this.handleSubmit}>
         <h1>{this.props.editMode ? 'Edit game' : 'Add new game'}</h1>
+        {this.props.editMode && !this.props.game && <p>loading</p>}
 
         {!!this.state.errors.global && <div className="ui negative message"><p>{this.state.errors.global}</p></div>}
 
