@@ -39,6 +39,7 @@ class GameFormPage extends React.Component {
           this.state.redirect ?
           <Redirect to="/games" /> :
           <GameForm
+            editMode={!!this.props.match.params._id}
             game={this.props.game}
             saveGame={this.saveGame}
           />
